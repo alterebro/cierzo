@@ -1,0 +1,13 @@
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
+ul.hourly {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style-type: none;
+}
+ul.hourly li {
+  flex: 0 0 20%;
+}

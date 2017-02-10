@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Cierzo</title>
+	<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+
+<header>
+	<h1>Cierzo Maño</h1>
+	<p>Webapp para conocer el vientaco que hace en Zaragoza.</p>
+
+	<nav>
+		<ul>
+			<li><a href="#cierzo-ahora">Cierzo Actual</a></li>
+			<li><a href="#proximas-horas">Proximas Horas</a></li>
+			<li><a href="#proximos-dias">Proximos Dias</a></li>
+		</ul>
+	</nav>
+	<hr />
+</header>
+
+<main></main>
+<template id="app">
+	<section id="cierzo-ahora">
+		<h3>Condiciones actuales</h3>
+		<ul>
+			<li>time: {{#current.time|timestamp}}</li>
+			<li>angle: {{=current.angle}}&deg; ( {{#current.angle|wind_direction}} )</li>
+			<li>icon: {{=current.icon}}</li>
+			<li>speed: {{=current.speed}} Km/h</li>
+			<li>temp: {{=current.temp}}&deg;C</li>
+			<li>condiciones actuales: {{=current.text}}</li>
+		</ul>
+	</section>
+
+	<section id="proximas-horas">
+		<h3>Proximas horas</h3>
+		{{@hourly}}
+			<ul class="hourly">
+				<li>{{#_val.time|hour}}</li>
+				<li>{{=_val.speed}} Km/h</li>
+				<li>{{=_val.angle}}&deg; ( {{#_val.angle|wind_direction}} )</li>
+				<li><img src="assets/images/{{=_val.icon}}.svg" width="24" /></li>
+				<li>{{=_val.temp}}&deg; C</li>
+			</ul>
+		{{/@hourly}}
+	</section>
+
+	<section id="proximos-dias">
+		<h3>Proximos dias</h3>
+		{{@daily}}
+			<ul>
+				<li>{{#_val.time|day}}</li>
+				<li>{{=_val.text}}</li>
+				<li>{{=_val.angle}}</li>
+				<li>{{=_val.speed}}</li>
+				<li>{{=_val.icon}}</li>
+				<li>{{=_val.temp.0}} - {{=_val.temp.1}}</li>
+			</ul>
+		{{/@daily}}
+	</section>
+</template>
+
+<footer>
+	<hr />
+	<p>&copy; 2017 Jorge Moreno. <strong><a href="https://twitter.com/alterebro">@alterebro</a></strong></p>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="assets/js/date.format.js"></script>
+<script type="text/javascript" src="assets/js/ajax.js"></script>
+<script type="text/javascript" src="assets/js/t.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
