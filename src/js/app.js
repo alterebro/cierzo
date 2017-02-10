@@ -2,7 +2,7 @@
 function getData() {
 
 	var request = ajax()
-		.get('api.php')
+		.get('api/')
 		.then(function(res, xhr) {
 			// console.log(res);
 			renderData(res);
