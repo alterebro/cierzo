@@ -162,7 +162,7 @@ var router = {
 			});
 
 		// TODO : get block from URL hash
-		if (!this.current_block) { this.current_block = this.blocks[2]; }
+		if (!this.current_block) { this.current_block = this.blocks[0]; }
 		this.showBlock(this.current_block);
 	}
 }
