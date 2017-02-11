@@ -278,6 +278,78 @@ main {
 		}
 	}
 
+	section#proximas-horas {
+		h3 {
+			margin: 0 0 2rem;
+		}
+		ul:first-of-type {
+			border-top: solid @color-bg 1px;
+		}
+		.hourly {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				flex: 1 1 25%;
+				margin: 0;
+				padding: 1.2rem 0;
+				height: 4.8rem;
+				line-height: 24px;
+
+				&.time {
+					width: 9rem;
+					flex-basis: auto;
+					flex-grow: 0;
+					color: fade(@color-fg, 54%);
+					font-size: 1.2rem;
+					text-transform: uppercase;
+				}
+				&.wind {
+					overflow: hidden;
+				}
+				&.temp {
+					width: 42px;
+					font-size: 1.2rem;
+					text-align: right;
+					flex-basis: auto;
+					flex-grow: 0;
+					color: fade(@color-fg, 54%);
+					font-weight: bold;
+				}
+				&.icon {
+					width: 42px;
+					flex-basis: auto;
+					flex-grow: 0;
+					text-align: center;
+				}
+				&.percent {
+					width: 100%;
+					flex: 0 0 100%;
+					height: 2px;
+					line-height: 0;
+					margin: 0;
+					padding: 0;
+					background: @color-bg;
+					overflow: hidden;
+
+					span {
+						display: block;
+						background: @color-primary;
+						height: 2px;
+					}
+				}
+			}
+
+		}
+
+
+	}
 }
 
 footer {
@@ -296,15 +368,4 @@ footer {
 			text-decoration: underline;
 		}
 	}
-}
-
-
-ul.hourly {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0;
-	list-style-type: none;
-}
-ul.hourly li {
-	flex: 0 0 20%;
 }

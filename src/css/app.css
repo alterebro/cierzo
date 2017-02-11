@@ -257,6 +257,69 @@ main section#cierzo-ahora div#condiciones-actuales figure img {
   display: block;
   margin: 0 auto .5rem;
 }
+main section#proximas-horas h3 {
+  margin: 0 0 2rem;
+}
+main section#proximas-horas ul:first-of-type {
+  border-top: solid #f5f5f5 1px;
+}
+main section#proximas-horas .hourly {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+main section#proximas-horas .hourly li {
+  flex: 1 1 25%;
+  margin: 0;
+  padding: 1.2rem 0;
+  height: 4.8rem;
+  line-height: 24px;
+}
+main section#proximas-horas .hourly li.time {
+  width: 9rem;
+  flex-basis: auto;
+  flex-grow: 0;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+main section#proximas-horas .hourly li.wind {
+  overflow: hidden;
+}
+main section#proximas-horas .hourly li.temp {
+  width: 42px;
+  font-size: 1.2rem;
+  text-align: right;
+  flex-basis: auto;
+  flex-grow: 0;
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: bold;
+}
+main section#proximas-horas .hourly li.icon {
+  width: 42px;
+  flex-basis: auto;
+  flex-grow: 0;
+  text-align: center;
+}
+main section#proximas-horas .hourly li.percent {
+  width: 100%;
+  flex: 0 0 100%;
+  height: 2px;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+main section#proximas-horas .hourly li.percent span {
+  display: block;
+  background: #da2a1d;
+  height: 2px;
+}
 footer {
   max-width: 64rem;
   margin: 0 auto;
@@ -273,13 +336,4 @@ footer a {
 footer a:hover {
   color: #000000;
   text-decoration: underline;
-}
-ul.hourly {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  list-style-type: none;
-}
-ul.hourly li {
-  flex: 0 0 20%;
 }

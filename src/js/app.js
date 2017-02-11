@@ -44,7 +44,7 @@ function renderData(data) {
 			return new Date(timestamp*1000).format('d.m.Y @H:i:s');
 		},
 		hour : function(timestamp) {
-			return new Date(timestamp*1000).format('h A');
+			return new Date(timestamp*1000).format('dM. hA');
 		},
 		day : function(timestamp) {
 			return new Date(timestamp*1000).format('d.m');
@@ -162,7 +162,7 @@ var router = {
 			});
 
 		// TODO : get block from URL hash
-		if (!this.current_block) { this.current_block = this.blocks[0]; }
+		if (!this.current_block) { this.current_block = this.blocks[1]; }
 		this.showBlock(this.current_block);
 	}
 }

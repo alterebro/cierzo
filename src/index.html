@@ -38,7 +38,7 @@
 		<header>
 			<h3>Condiciones actuales</h3>
 			<p>
-				{{#current.angle|wind_string}} a <strong>{{=current.speed}}Kmph</strong>.
+				{{#current.angle|wind_string}} a <strong>{{=current.speed}} Km/h</strong>.
 				<br />{{=current.temp}}&deg;C. {{=current.text}}
 			</p>
 			<ul>
@@ -67,11 +67,11 @@
 		<h3>Previsión para las próximas horas</h3>
 		{{@hourly}}
 			<ul class="hourly">
-				<li>{{#_val.time|hour}}</li>
-				<li>{{=_val.speed}} Km/h</li>
-				<li>{{=_val.angle}}&deg; ( {{#_val.angle|wind_direction}} )</li>
-				<li><img src="img/{{=_val.icon}}.svg" width="24" /></li>
-				<li>{{=_val.temp}}&deg; C</li>
+				<li class="time">{{#_val.time|hour}}</li>
+				<li class="wind"><strong>Vientos a {{=_val.speed}} Km/h</strong> del {{#_val.angle|wind_direction}} ( {{=_val.angle}}&deg; )</li>
+				<li class="temp">{{=_val.temp}}&deg; C</li>
+				<li class="icon"><img src="img/{{=_val.icon}}.svg" width="24" /></li>
+				<li class="percent"><span style="width: {{=_val.speed}}%"></span></li>
 			</ul>
 		{{/@hourly}}
 	</section>
