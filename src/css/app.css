@@ -1,5 +1,5 @@
 html {
-  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 62.5%;
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -43,8 +43,11 @@ strong {
   font-weight: bolder;
 }
 hr {
+  margin: 0;
   height: 0;
   overflow: visible;
+  border: none;
+  border-top: dotted rgba(0, 0, 0, 0.2) 1px;
 }
 a {
   background-color: transparent;
@@ -56,6 +59,7 @@ a:hover {
   outline-width: 0;
 }
 h1,
+h3,
 p,
 nav ul,
 nav li {
@@ -88,7 +92,7 @@ header p {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 2rem;
-  margin: 0 auto 1rem;
+  margin: 0 auto .5rem;
   line-height: 2rem;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -127,10 +131,34 @@ header hr {
 main {
   max-width: 80rem;
   margin: 0 auto;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+main section {
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px 10px rgba(0, 0, 0, 0.05);
+}
+main section h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 footer {
   max-width: 80rem;
   margin: 0 auto;
+  padding: 0 2rem;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1.2rem;
+}
+footer p {
+  padding: 1rem 0 2rem;
+}
+footer a {
+  color: #da2a1d;
+}
+footer a:hover {
+  color: #000000;
+  text-decoration: underline;
 }
 ul.hourly {
   display: flex;

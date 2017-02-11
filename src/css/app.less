@@ -4,7 +4,7 @@
 @color-primary : #da2a1d;
 
 html {
-	font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+	font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
 	font-size: 62.5%;
 	line-height: 1.15;
 	-ms-text-size-adjust: 100%;
@@ -30,8 +30,11 @@ template { display: none; }
 b, strong { font-weight: inherit; }
 b, strong { font-weight: bolder; }
 hr {
+	margin: 0;
 	height: 0;
 	overflow: visible;
+	border: none;
+	border-top: dotted fade(#000, 20%) 1px;
 }
 
 
@@ -46,7 +49,7 @@ a:active, a:hover {
 
 
 // -----
-h1, p, nav ul, nav li {
+h1, h3, p, nav ul, nav li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -78,7 +81,7 @@ header {
 	p {
 		.container();
 		padding: 0 2rem;
-		margin: 0 auto 1rem;
+		margin: 0 auto .5rem;
 		line-height: 2rem;
 		color: fade(@color-fg-inv, 70%);
 	}
@@ -122,10 +125,40 @@ header {
 
 main {
 	.container();
+	margin: 2rem auto;
+	padding: 0 2rem;
+
+	section {
+		background: #fff;
+		padding: 2rem;
+		box-shadow:
+			0 1px 2px fade(#000, 25%),
+			0 1px 10px fade(#000, 5%)
+		;
+
+		h3 {
+			font-size: 1.6rem;
+			font-weight: bold;
+		}
+	}
 }
 
 footer {
 	.container();
+	padding: 0 2rem;
+	color: fade(@color-fg, 54%);
+	font-size: 1.2rem;
+
+	p {
+		padding: 1rem 0 2rem;
+	}
+	a {
+		color: @color-primary;
+		&:hover {
+			color: @color-fg;
+			text-decoration: underline;
+		}
+	}
 }
 
 

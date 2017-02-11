@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,13 +9,16 @@
 	<meta name="author" content="@alterebro" />
 	<meta name="MobileOptimized" content="width" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="theme-color" content="#da2a1d" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
 	<link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
 
 <header>
 	<h1>Cierzo Maño</h1>
-	<p>Webapp para conocer el vientaco que hace en Zaragoza.</p>
+	<p>Conoce el vientaco que hace en Zaragoza</p>
 
 	<nav>
 		<ul>
@@ -32,17 +35,20 @@
 	<section id="cierzo-ahora">
 		<h3>Condiciones actuales</h3>
 		<ul>
-			<li>time: {{#current.time|timestamp}}</li>
-			<li>angle: {{=current.angle}}&deg; ( {{#current.angle|wind_direction}} )</li>
-			<li>icon: {{=current.icon}}</li>
-			<li>speed: {{=current.speed}} Km/h</li>
-			<li>temp: {{=current.temp}}&deg;C</li>
-			<li>condiciones actuales: {{=current.text}}</li>
+			<li>Ultima actualizacion: {{#current.time|timestamp}}</li>
+			<li>Velocidad del viento: {{=current.speed}} Km/h</li>
+			<li>Direccion del viento : {{#current.angle|wind_direction}}</li>
+			<li>Angulo: {{=current.angle}}&deg;
+			<li>
+				Condiciones actuales:
+				<br />{{=current.temp}}&deg;C {{=current.text}}
+				<br /><img src="img/{{=current.icon}}.svg" width="48" alt="{{=current.icon}}" />
+			</li>
 		</ul>
 	</section>
 
 	<section id="proximas-horas">
-		<h3>Proximas horas</h3>
+		<h3>Previsión para las próximas horas</h3>
 		{{@hourly}}
 			<ul class="hourly">
 				<li>{{#_val.time|hour}}</li>
@@ -55,7 +61,7 @@
 	</section>
 
 	<section id="proximos-dias">
-		<h3>Proximos dias</h3>
+		<h3>Previsión para las próximos dias</h3>
 		{{@daily}}
 			<ul>
 				<li>{{#_val.time|day}}</li>
