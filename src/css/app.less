@@ -1,6 +1,6 @@
 @color-fg : #000;
 @color-fg-inv : #fff;
-@color-bg : #fafafa;
+@color-bg : #f5f5f5;
 @color-primary : #da2a1d;
 
 html {
@@ -10,8 +10,8 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	box-sizing: border-box;
-	background: @color-bg;
 	color: fade(@color-fg, 87%);
+	background-color: @color-bg;
 }
 body {
 	margin: 0;
@@ -58,7 +58,7 @@ h1, h3, p, nav ul, nav li {
 // -----
 
 .container {
-	max-width: 80rem;
+	max-width: 64rem;
 	margin: 0 auto;
 }
 
@@ -66,7 +66,7 @@ header, main, footer {
 	font-size: 1.4rem;
 }
 
-header {
+header[role="banner"] {
 
 	background: @color-primary;
 	color: @color-fg-inv;
@@ -141,6 +141,143 @@ main {
 			font-weight: bold;
 		}
 	}
+
+	section#cierzo-ahora {
+		padding: 0;
+
+		header {
+			padding: 2rem;
+			min-height: 24rem;
+			background-color: lighten(@color-primary, 40%);
+			background-image: url(../img/elpilar-zaragoza.jpg);
+			background-size: cover;
+			background-position: top center;
+
+			h3 {
+				color: #fff;
+			}
+			p {
+				color: fade(#fff, 70%);
+				margin: 0 0 2rem 0;
+			}
+			ul {
+
+				position: relative;
+				list-style: none;
+				margin: 0 auto;
+				padding: 0;
+				padding: 2rem;
+				height: 14rem;
+				width: 14rem;
+
+				text-align: center;
+				z-index: 1;
+
+				&:before {
+					content: '';
+					z-index: -1;
+					position: absolute;
+					display: block;
+					top: -3rem;
+					left: 50%;
+					margin-left: -1.5rem;
+					width: 3rem;
+					height: 20rem;
+					// transform: rotate(0deg);
+					background-image: url(../img/arrow.svg);
+					background-repeat: no-repeat;
+					background-position: bottom center;
+
+				}
+				&:after {
+					content: '';
+					z-index: -1;
+					position: absolute;
+					display: block;
+					top: 0;
+					left: 0;
+					background: #fff;
+					height: 14rem;
+					width: 14rem;
+					border-radius: 14rem;
+					box-shadow:
+					inset 0 0 0 3px #fff,
+					inset 0 0 0 5px fade(@color-primary, 50%),
+						0 0 0 4px rgba(0, 0, 0, .25),
+						0 2px 3px rgba(0, 0, 0, .50),
+						0 1px 25px rgba(0, 0, 0, .25)
+					;
+
+				}
+
+
+				li:first-child {
+					height: 7rem;
+					padding: .5rem 0 0 0;
+					strong {
+						font-size: 4.5rem;
+						font-weight: normal;
+						line-height: 4.5rem;
+						display: block;
+					}
+					small {
+						display: block;
+						font-size: 1.2rem;
+						color: fade(@color-fg, 54%);
+					}
+				}
+				li:last-child {
+					font-size: 1.2rem;
+					background: fade(@color-primary, 100%);
+					color: fade(@color-fg-inv, 100%);
+					height: 2.5rem;
+					line-height: 2.5rem;
+					margin: .25rem 0;
+					display: inline-block;
+					width: auto;
+					padding: 0 1rem;
+					border-radius: 3px;
+				}
+			}
+		}
+
+		div#condiciones-actuales {
+			padding: 2rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			p, figure {
+				flex: 1 1 50%;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+
+				small {
+					font-size: 1.2rem;
+					color: fade(@color-fg, 54%);
+				}
+			}
+			p {
+				strong {
+					font-weight: normal;
+					font-size: 2.4rem;
+					display: block;
+					height: 3.2rem;
+					line-height: 3.2rem;
+					margin: 0 auto .5rem;
+				}
+			}
+			figure {
+				img {
+					display: block;
+					margin: 0 auto .5rem;
+				}
+			}
+		}
+	}
+
 }
 
 footer {

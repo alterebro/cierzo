@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<header>
+<header role="banner">
 	<h1>Cierzo Maño</h1>
 	<p>Conoce el vientaco que hace en Zaragoza</p>
 
@@ -32,19 +32,32 @@
 
 <main></main>
 <template id="app">
+
+	<style>#cierzo-ahora header ul:before { transform: rotate({{=current.angle}}deg); }</style>
 	<section id="cierzo-ahora">
-		<h3>Condiciones actuales</h3>
-		<ul>
-			<li>Ultima actualizacion: {{#current.time|timestamp}}</li>
-			<li>Velocidad del viento: {{=current.speed}} Km/h</li>
-			<li>Direccion del viento : {{#current.angle|wind_direction}}</li>
-			<li>Angulo: {{=current.angle}}&deg;
-			<li>
-				Condiciones actuales:
-				<br />{{=current.temp}}&deg;C {{=current.text}}
-				<br /><img src="img/{{=current.icon}}.svg" width="48" alt="{{=current.icon}}" />
-			</li>
-		</ul>
+		<header>
+			<h3>Condiciones actuales</h3>
+			<p>{{=current.text}}</p>
+			<ul>
+				<li>
+					<strong>{{=current.speed}}</strong>
+					<small>Km/h</small>
+				</li>
+				<li>{{=current.angle}}&deg; {{#current.angle|wind_direction}}</li>
+			</ul>
+		</header>
+
+		<div id="condiciones-actuales">
+			<p>
+				<strong>{{=current.temp}}&deg;C</strong>
+				<small>{{#current.time|timestamp}}</small>
+			</p>
+			<figure>
+				<img src="img/{{=current.icon}}.svg" width="32" alt="{{=current.icon}}" />
+				<figcaption><small>{{=current.text}}</small></figcaption>
+			</figure>
+		</div>
+
 	</section>
 
 	<section id="proximas-horas">
@@ -77,7 +90,9 @@
 
 <footer>
 	<hr />
-	<p>&copy; 2017 Jorge Moreno. <strong><a href="https://twitter.com/alterebro">@alterebro</a></strong></p>
+	<p>
+		&copy; 2017 Jorge Moreno. <strong><a href="https://twitter.com/alterebro">@alterebro</a></strong>
+	</p>
 </footer>
 
 

@@ -5,8 +5,8 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  background: #fafafa;
   color: rgba(0, 0, 0, 0.87);
+  background-color: #f5f5f5;
 }
 body {
   margin: 0;
@@ -68,7 +68,7 @@ nav li {
   list-style: none;
 }
 .container {
-  max-width: 80rem;
+  max-width: 64rem;
   margin: 0 auto;
 }
 header,
@@ -76,41 +76,41 @@ main,
 footer {
   font-size: 1.4rem;
 }
-header {
+header[role="banner"] {
   background: #da2a1d;
   color: #ffffff;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
 }
-header h1 {
-  max-width: 80rem;
+header[role="banner"] h1 {
+  max-width: 64rem;
   margin: 0 auto;
   font-size: 2rem;
   font-weight: normal;
   padding: 2rem 2rem 0;
 }
-header p {
-  max-width: 80rem;
+header[role="banner"] p {
+  max-width: 64rem;
   margin: 0 auto;
   padding: 0 2rem;
   margin: 0 auto .5rem;
   line-height: 2rem;
   color: rgba(255, 255, 255, 0.7);
 }
-header nav {
-  max-width: 80rem;
+header[role="banner"] nav {
+  max-width: 64rem;
   margin: 0 auto;
   padding: 0 2rem;
 }
-header nav ul {
+header[role="banner"] nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-header nav ul li {
+header[role="banner"] nav ul li {
   flex: 1 1 auto;
 }
-header nav ul li a {
+header[role="banner"] nav ul li a {
   display: block;
   padding: 1.5rem 0 1rem;
   text-align: center;
@@ -118,18 +118,18 @@ header nav ul li a {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.5);
 }
-header nav ul li a:hover {
+header[role="banner"] nav ul li a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
-header nav ul li a.active {
+header[role="banner"] nav ul li a.active {
   color: #ffffff;
   box-shadow: inset 0 -2px 0 #ffffff;
 }
-header hr {
+header[role="banner"] hr {
   display: none;
 }
 main {
-  max-width: 80rem;
+  max-width: 64rem;
   margin: 0 auto;
   margin: 2rem auto;
   padding: 0 2rem;
@@ -143,8 +143,122 @@ main section h3 {
   font-size: 1.6rem;
   font-weight: bold;
 }
+main section#cierzo-ahora {
+  padding: 0;
+}
+main section#cierzo-ahora header {
+  padding: 2rem;
+  min-height: 24rem;
+  background-color: #f8cecb;
+  background-image: url(../img/elpilar-zaragoza.jpg);
+  background-size: cover;
+  background-position: top center;
+}
+main section#cierzo-ahora header h3 {
+  color: #fff;
+}
+main section#cierzo-ahora header p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 2rem 0;
+}
+main section#cierzo-ahora header ul {
+  position: relative;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  padding: 2rem;
+  height: 14rem;
+  width: 14rem;
+  text-align: center;
+  z-index: 1;
+}
+main section#cierzo-ahora header ul:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  display: block;
+  top: -3rem;
+  left: 50%;
+  margin-left: -1.5rem;
+  width: 3rem;
+  height: 20rem;
+  background-image: url(../img/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+main section#cierzo-ahora header ul:after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background: #fff;
+  height: 14rem;
+  width: 14rem;
+  border-radius: 14rem;
+  box-shadow: inset 0 0 0 3px #ffffff, inset 0 0 0 5px rgba(218, 42, 29, 0.5), 0 0 0 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.5), 0 1px 25px rgba(0, 0, 0, 0.25);
+}
+main section#cierzo-ahora header ul li:first-child {
+  height: 7rem;
+  padding: .5rem 0 0 0;
+}
+main section#cierzo-ahora header ul li:first-child strong {
+  font-size: 4.5rem;
+  font-weight: normal;
+  line-height: 4.5rem;
+  display: block;
+}
+main section#cierzo-ahora header ul li:first-child small {
+  display: block;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+main section#cierzo-ahora header ul li:last-child {
+  font-size: 1.2rem;
+  background: #da2a1d;
+  color: #ffffff;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: .25rem 0;
+  display: inline-block;
+  width: auto;
+  padding: 0 1rem;
+  border-radius: 3px;
+}
+main section#cierzo-ahora div#condiciones-actuales {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main section#cierzo-ahora div#condiciones-actuales p,
+main section#cierzo-ahora div#condiciones-actuales figure {
+  flex: 1 1 50%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+main section#cierzo-ahora div#condiciones-actuales p small,
+main section#cierzo-ahora div#condiciones-actuales figure small {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+main section#cierzo-ahora div#condiciones-actuales p strong {
+  font-weight: normal;
+  font-size: 2.4rem;
+  display: block;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  margin: 0 auto .5rem;
+}
+main section#cierzo-ahora div#condiciones-actuales figure img {
+  display: block;
+  margin: 0 auto .5rem;
+}
 footer {
-  max-width: 80rem;
+  max-width: 64rem;
   margin: 0 auto;
   padding: 0 2rem;
   color: rgba(0, 0, 0, 0.54);
