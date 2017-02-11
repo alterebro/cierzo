@@ -257,13 +257,15 @@ main section#cierzo-ahora div#condiciones-actuales figure img {
   display: block;
   margin: 0 auto .5rem;
 }
-main section#proximas-horas h3 {
+main section#proximas-horas h3,
+main section#proximos-dias h3 {
   margin: 0 0 2rem;
 }
-main section#proximas-horas ul:first-of-type {
+main section#proximas-horas ul:first-of-type,
+main section#proximos-dias ul:first-of-type {
   border-top: solid #f5f5f5 1px;
 }
-main section#proximas-horas .hourly {
+main section#proximas-horas ul.hourly {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -272,14 +274,14 @@ main section#proximas-horas .hourly {
   margin: 0;
   padding: 0;
 }
-main section#proximas-horas .hourly li {
+main section#proximas-horas ul.hourly li {
   flex: 1 1 25%;
   margin: 0;
   padding: 1.2rem 0;
   height: 4.8rem;
   line-height: 24px;
 }
-main section#proximas-horas .hourly li.time {
+main section#proximas-horas ul.hourly li.time {
   width: 9rem;
   flex-basis: auto;
   flex-grow: 0;
@@ -287,10 +289,10 @@ main section#proximas-horas .hourly li.time {
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-main section#proximas-horas .hourly li.wind {
+main section#proximas-horas ul.hourly li.wind {
   overflow: hidden;
 }
-main section#proximas-horas .hourly li.temp {
+main section#proximas-horas ul.hourly li.temp {
   width: 42px;
   font-size: 1.2rem;
   text-align: right;
@@ -299,26 +301,88 @@ main section#proximas-horas .hourly li.temp {
   color: rgba(0, 0, 0, 0.54);
   font-weight: bold;
 }
-main section#proximas-horas .hourly li.icon {
+main section#proximas-horas ul.hourly li.icon {
   width: 42px;
   flex-basis: auto;
   flex-grow: 0;
   text-align: center;
 }
-main section#proximas-horas .hourly li.percent {
+main section#proximas-horas ul.hourly li.percent {
   width: 100%;
   flex: 0 0 100%;
-  height: 2px;
+  height: 3px;
   line-height: 0;
   margin: 0;
   padding: 0;
   background: #f5f5f5;
   overflow: hidden;
 }
-main section#proximas-horas .hourly li.percent span {
+main section#proximas-horas ul.hourly li.percent span {
   display: block;
   background: #da2a1d;
-  height: 2px;
+  height: 3px;
+}
+ul.daily {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: solid #f5f5f5 1px;
+}
+ul.daily.header li {
+  padding: 1rem 0;
+  line-height: 2.4rem;
+  text-transform: none !important;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
+ul.daily li {
+  flex: 1 1 20%;
+  margin: 0;
+  padding: 1.5rem 0;
+}
+ul.daily li.time {
+  width: 9rem;
+  flex-basis: auto;
+  flex-grow: 0;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  line-height: 2.4rem;
+}
+ul.daily li.wind div.percent {
+  width: 100%;
+  height: 3px;
+  line-height: 0;
+  background: #f5f5f5;
+  overflow: hidden;
+  margin: .5rem 0 0 0;
+}
+ul.daily li.wind div.percent span {
+  display: block;
+  background: #da2a1d;
+  height: 3px;
+}
+ul.daily li.min,
+ul.daily li.max {
+  width: 42px;
+  flex-basis: auto;
+  flex-grow: 0;
+  text-align: center;
+  line-height: 2.4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
+ul.daily li.icon {
+  width: 42px;
+  flex-basis: auto;
+  flex-grow: 0;
+  text-align: center;
 }
 footer {
   max-width: 64rem;

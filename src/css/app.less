@@ -278,14 +278,18 @@ main {
 		}
 	}
 
-	section#proximas-horas {
+	section#proximas-horas,
+	section#proximos-dias {
 		h3 {
 			margin: 0 0 2rem;
 		}
 		ul:first-of-type {
 			border-top: solid @color-bg 1px;
 		}
-		.hourly {
+	}
+
+	section#proximas-horas {
+		ul.hourly {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -331,7 +335,7 @@ main {
 				&.percent {
 					width: 100%;
 					flex: 0 0 100%;
-					height: 2px;
+					height: 3px;
 					line-height: 0;
 					margin: 0;
 					padding: 0;
@@ -341,7 +345,7 @@ main {
 					span {
 						display: block;
 						background: @color-primary;
-						height: 2px;
+						height: 3px;
 					}
 				}
 			}
@@ -351,6 +355,85 @@ main {
 
 	}
 }
+
+
+
+ul.daily {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: solid @color-bg 1px;
+
+	&.header {
+		li {
+			padding: 1rem 0;
+			line-height: 2.4rem;
+			text-transform: none !important;
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: fade(@color-fg, 54%);
+		}
+	}
+
+	li {
+		flex: 1 1 20%;
+		margin: 0;
+		padding: 1.5rem 0;
+
+		&.time {
+			width: 9rem;
+			flex-basis: auto;
+			flex-grow: 0;
+			color: fade(@color-fg, 54%);
+			font-size: 1.2rem;
+			text-transform: uppercase;
+			line-height: 2.4rem;
+
+		}
+		&.wind {
+			// padding: 1rem 0 .5rem;
+
+			div.percent {
+				width: 100%;
+				height: 3px;
+				line-height: 0;
+				background: @color-bg;
+				overflow: hidden;
+				margin: .5rem 0 0 0;
+				span {
+					display: block;
+					background: @color-primary;
+					height: 3px;
+				}
+
+			}
+		}
+		&.min, &.max {
+			width: 42px;
+			flex-basis: auto;
+			flex-grow: 0;
+			text-align: center;
+			line-height: 2.4rem;
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: fade(@color-fg, 54%);
+		}
+
+		&.icon {
+			width: 42px;
+			flex-basis: auto;
+			flex-grow: 0;
+			text-align: center;
+		}
+	}
+}
+
+
 
 footer {
 	.container();
