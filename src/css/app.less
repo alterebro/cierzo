@@ -54,6 +54,10 @@ h1, p, nav ul, nav li {
 
 // -----
 
+.container {
+	max-width: 80rem;
+	margin: 0 auto;
+}
 
 header, main, footer {
 	font-size: 1.4rem;
@@ -66,18 +70,21 @@ header {
 	box-shadow: 0 3px 2px fade(#000, 15%);
 
 	h1 {
+		.container();
 		font-size: 2rem;
 		font-weight: normal;
 		padding: 2rem 2rem 0;
 	}
 	p {
+		.container();
 		padding: 0 2rem;
-		margin: 0 0 1rem;
+		margin: 0 auto 1rem;
 		line-height: 2rem;
 		color: fade(@color-fg-inv, 70%);
 	}
 
 	nav {
+		.container();
 		padding: 0 2rem;
 
 		ul {
@@ -112,6 +119,14 @@ header {
 	hr { display: none; }
 }
 
+
+main {
+	.container();
+}
+
+footer {
+	.container();
+}
 
 
 ul.hourly {
