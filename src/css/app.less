@@ -1,6 +1,7 @@
-@color-fg 			: #242524;
-@color-bg 			: #ffffff;
-
+@color-fg : #000;
+@color-fg-inv : #fff;
+@color-bg : #fafafa;
+@color-primary : #da2a1d;
 
 html {
 	font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
@@ -10,7 +11,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 	box-sizing: border-box;
 	background: @color-bg;
-	color: @color-fg;
+	color: fade(@color-fg, 87%);
 }
 body {
 	margin: 0;
@@ -43,6 +44,73 @@ a:active, a:hover {
 	outline-width: 0;
 }
 
+
+// -----
+h1, p, nav ul, nav li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// -----
+
+
+header, main, footer {
+	font-size: 1.4rem;
+}
+
+header {
+
+	background: @color-primary;
+	color: @color-fg-inv;
+	box-shadow: 0 3px 2px fade(#000, 15%);
+
+	h1 {
+		font-size: 2rem;
+		font-weight: normal;
+		padding: 2rem 2rem 0;
+	}
+	p {
+		padding: 0 2rem;
+		margin: 0 0 1rem;
+		line-height: 2rem;
+		color: fade(@color-fg-inv, 70%);
+	}
+
+	nav {
+		padding: 0 2rem;
+
+		ul {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			li {
+				flex: 1 1 auto;
+
+				a {
+					display: block;
+					padding: 1.5rem 0 1rem;
+					text-align: center;
+					text-transform: uppercase;
+					font-size: 1.2rem;
+					color: fade(@color-fg-inv, 50%);
+
+					&:hover {
+						color: fade(@color-fg-inv, 70%);
+					}
+					&.active {
+						color: @color-fg-inv;
+						box-shadow: inset 0 -2px 0 #fff;
+					}
+				}
+			}
+		}
+	}
+
+	hr { display: none; }
+}
 
 
 

@@ -99,6 +99,7 @@ var router = {
 		var menu = document.querySelectorAll('header nav ul li a');
 			menu.forEach(function(el, i) {
 				var block = el.getAttribute('href').split('#')[1];
+				el.setAttribute('data-block', block);
 				el.onclick = function(e) {
 					self.showBlock(block);
 					e.preventDefault();
@@ -111,6 +112,13 @@ var router = {
 			document.getElementById(this.blocks[i]).style.display = 'none';
 		}
 		document.getElementById(block).style.display = 'block';
+
+		document.querySelectorAll('header nav a').forEach(function(el) {
+			el.classList.remove('active');
+		});
+		// document.querySelector('header nav ul li a[data-block="'+block+'"]').classList.add('active');
+		document.querySelector('header nav ul li a[data-block="'+block+'"]').className = 'active';
+
 		this.current_block = block;
 	},
 	init : function() {
