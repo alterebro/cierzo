@@ -37,7 +37,10 @@
 	<section id="cierzo-ahora">
 		<header>
 			<h3>Condiciones actuales</h3>
-			<p>{{=current.text}}</p>
+			<p>
+				{{#current.angle|wind_string}} a <strong>{{=current.speed}}Kmph</strong>.
+				<br />{{=current.temp}}&deg;C. {{=current.text}}
+			</p>
 			<ul>
 				<li>
 					<strong>{{=current.speed}}</strong>

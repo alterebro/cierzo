@@ -13,6 +13,32 @@ function getData() {
 
 function renderData(data) {
 
+	var winds = [
+		{ id: 'N', name: 'Tramontana', from: 'Norte' },
+		{ id: 'NNE', name: 'Tramontana', from: 'Norte-Nordeste' },
+		{ id: 'NE', name: 'Gregal', from: 'Nordeste' },
+		{ id: 'ENE', name: 'Levante', from: 'Este-Nordeste' },
+		{ id: 'E', name: 'Levante', from: 'Este' },
+		{ id: 'ESE', name: 'Levante', from: 'Este-Sudeste' },
+		{ id: 'SE', name: 'Siroco', from: 'Sudeste' },
+		{ id: 'SSE', name: 'Siroco', from: 'Sur-Sudeste' },
+		{ id: 'S', name: 'Ostro', from: 'Sur' },
+		{ id: 'SSO', name: 'Ostro', from: 'Sur-Sudoeste' },
+		{ id: 'SO', name: 'Lebeche', from: 'Sudoeste' },
+		{ id: 'OSO', name: 'Poniente', from: 'Oeste-Sudoeste' },
+		{ id: 'O', name: 'Poniente', from: 'Oeste' },
+		{ id: 'ONO', name: 'Cierzo', from: 'Oeste-Noroeste' },
+		{ id: 'NO', name: 'Cierzo', from: 'Noroeste' },
+		{ id: 'NNO', name: 'Cierzo', from: 'Norte-Noroeste' },
+	];
+
+	/*
+	var directions = [];
+	winds.forEach(function(el) {
+		directions.push(el.id);
+	});
+	*/
+
 	var filter = {
 		timestamp : function(timestamp) {
 			return new Date(timestamp*1000).format('d.m.Y @H:i:s');
@@ -25,8 +51,13 @@ function renderData(data) {
 		},
 		wind_direction : function(degrees) {
 			var v = Math.floor( (degrees/22.5) + 0.5 );
-			var directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
-			return directions[(v%16)];
+			return winds[(v%16)]['id'];
+		},
+		wind_string : function(degrees) {
+			var v = Math.floor( (degrees/22.5) + 0.5 );
+				v = winds[(v%16)];
+			var str = 'Viento ' + v.name +  ' del ' + v.from;
+			return str;
 		}
 	}
 
@@ -42,6 +73,7 @@ function renderData(data) {
 		template.register("hour", filter.hour );
 		template.register("day", filter.day );
 		template.register("wind_direction", filter.wind_direction );
+		template.register("wind_string", filter.wind_string );
 
 	var app = document.createElement('div');
 		app.innerHTML = template.render(data);
