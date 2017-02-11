@@ -1,6 +1,59 @@
-html,
-body {
+html {
   font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #242524;
+}
+body {
+  margin: 0;
+  font-size: 1.6em;
+  line-height: 1.4;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+img {
+  border-style: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+template {
+  display: none;
+}
+b,
+strong {
+  font-weight: inherit;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+hr {
+  height: 0;
+  overflow: visible;
+}
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+}
+a:active,
+a:hover {
+  outline-width: 0;
 }
 ul.hourly {
   display: flex;
