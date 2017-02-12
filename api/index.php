@@ -125,6 +125,7 @@ $_ENDPOINT =
 
 // Crawl and Output Data
 $data = new cacheData( $_ENDPOINT, 120 );
+header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json; charset=utf-8');
 echo $data->json_data;
 
