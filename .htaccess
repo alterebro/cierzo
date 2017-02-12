@@ -1,5 +1,6 @@
 RewriteEngine on
 Options +FollowSymLinks
+RewriteCond %{HTTP_HOST} !^localhost
 RewriteCond %{REQUEST_URI} !(.*)/api
 RewriteCond %{REQUEST_URI} !^/www
 RewriteRule ^(.*)$ www/$1 [L]
