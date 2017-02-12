@@ -3,6 +3,11 @@
 @color-bg : #f5f5f5;
 @color-primary : #da2a1d;
 
+@breakpoint-mobile : 380;
+@mobile : ~"all and (max-width: @{breakpoint-mobile}px)";
+@non-mobile : ~"all and (min-width: @{breakpoint-mobile}px)";
+
+
 html {
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
 	font-size: 62.5%;
@@ -307,16 +312,47 @@ main {
 				line-height: 24px;
 
 				&.time {
-					width: 9rem;
+					width: 8rem;
 					flex-basis: auto;
 					flex-grow: 0;
 					color: fade(@color-fg, 54%);
 					font-size: 1.2rem;
 					text-transform: uppercase;
 				}
-				&.wind {
-					overflow: hidden;
+				&.compass {
+					width: 32px;
+					flex-basis: auto;
+					flex-grow: 0;
+					// text-align: center;
+
+					span {
+						display: inline-block;
+						height: 24px;
+						width: 24px;
+						background-image: url(../img/compass.svg);
+						background-repeat: no-repeat;
+						background-size: 24px;
+					}
 				}
+				&.wind-full {
+					overflow: hidden;
+					display: none;
+				}
+				&.wind-mini {
+					overflow: hidden;
+					display: block;
+					font-size: 1.2rem;
+				}
+
+				@media @non-mobile {
+					&.wind-full {
+						display: block;
+					}
+					&.wind-mini {
+						display: none;
+					}
+				}
+
 				&.temp {
 					width: 42px;
 					font-size: 1.2rem;
@@ -432,6 +468,8 @@ ul.daily {
 		}
 	}
 }
+
+
 
 
 

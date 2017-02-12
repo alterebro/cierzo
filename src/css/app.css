@@ -282,15 +282,42 @@ main section#proximas-horas ul.hourly li {
   line-height: 24px;
 }
 main section#proximas-horas ul.hourly li.time {
-  width: 9rem;
+  width: 8rem;
   flex-basis: auto;
   flex-grow: 0;
   color: rgba(0, 0, 0, 0.54);
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-main section#proximas-horas ul.hourly li.wind {
+main section#proximas-horas ul.hourly li.compass {
+  width: 32px;
+  flex-basis: auto;
+  flex-grow: 0;
+}
+main section#proximas-horas ul.hourly li.compass span {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-image: url(../img/compass.svg);
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+main section#proximas-horas ul.hourly li.wind-full {
   overflow: hidden;
+  display: none;
+}
+main section#proximas-horas ul.hourly li.wind-mini {
+  overflow: hidden;
+  display: block;
+  font-size: 1.2rem;
+}
+@media all and (min-width: 380px) {
+  main section#proximas-horas ul.hourly li.wind-full {
+    display: block;
+  }
+  main section#proximas-horas ul.hourly li.wind-mini {
+    display: none;
+  }
 }
 main section#proximas-horas ul.hourly li.temp {
   width: 42px;

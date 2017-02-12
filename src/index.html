@@ -68,7 +68,9 @@
 		{{@hourly}}
 			<ul class="hourly">
 				<li class="time">{{#_val.time|hour}}</li>
-				<li class="wind"><strong>Vientos a {{=_val.speed}} Km/h</strong> del {{#_val.angle|wind_direction}} ( {{=_val.angle}}&deg; )</li>
+				<li class="compass"><span style="transform: rotate({{=_val.angle}}deg);"></span></li>
+				<li class="wind-full"><strong>Vientos a {{=_val.speed}} Km/h</strong> del {{#_val.angle|wind_direction}} ( {{=_val.angle}}&deg; )</li>
+				<li class="wind-mini"><strong>{{=_val.speed}}Km/h</strong> {{#_val.angle|wind_direction}}</li>
 				<li class="temp">{{=_val.temp}}&deg; C</li>
 				<li class="icon"><img src="img/{{=_val.icon}}.svg" width="24" /></li>
 				<li class="percent"><span style="width: {{=_val.speed}}%"></span></li>
