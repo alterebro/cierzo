@@ -18,7 +18,7 @@
 	- Function Support : @icyflash ( github.com/icyflash/t.js )
 
 */
-(function() {
+;(function() {
 
 	var blockregex = /\{\{(([@!]?)(.+?))\}\}(([\s\S]+?)(\{\{:\1\}\}([\s\S]+?))?)\{\{\/\1\}\}/g,
 		valregex = /\{\{([=%#])(.+?)\}\}/g;
