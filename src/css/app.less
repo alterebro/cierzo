@@ -3,9 +3,12 @@
 @color-bg : #f5f5f5;
 @color-primary : #da2a1d;
 
-@breakpoint-mobile : 380;
-@mobile : ~"all and (max-width: @{breakpoint-mobile}px)";
-@non-mobile : ~"all and (min-width: @{breakpoint-mobile}px)";
+@breakpoint-small : 400;
+@breakpoint-medium : 480;
+
+@small : ~"all and (max-width: @{breakpoint-small}px)";
+@medium : ~"all and (min-width: @{breakpoint-small}px) and (max-width: @{breakpoint-medium}px)";
+@big : ~"all and (min-width: @{breakpoint-medium}px)";
 
 
 html {
@@ -151,16 +154,14 @@ main {
 		padding: 0;
 
 		header {
-			padding: 2rem;
+			padding: 2rem 2rem 3rem;
 			min-height: 24rem;
-			background-color: lighten(@color-primary, 40%);
+			background-color: lighten(@color-fg, 20%);
 			background-image: url(../img/elpilar-zaragoza.jpg);
 			background-size: cover;
 			background-position: top center;
 
-			h3 {
-				color: #fff;
-			}
+			h3 { color: #fff; }
 			p {
 				color: fade(#fff, 70%);
 				margin: 0 0 2rem 0;
@@ -283,191 +284,136 @@ main {
 		}
 	}
 
+
 	section#proximas-horas,
 	section#proximos-dias {
 		h3 {
-			margin: 0 0 2rem;
+			margin: 0 0 1rem;
 		}
 		ul:first-of-type {
 			border-top: solid @color-bg 1px;
 		}
 	}
 
-	section#proximas-horas {
-		ul.hourly {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
+	section#proximas-horas {}
 
-			list-style-type: none;
+	.data-block {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+
+		li {
+			display: block;
 			margin: 0;
-			padding: 0;
+			padding: 1rem 0;
+			flex: 0 1 auto;
 
-			li {
-				flex: 1 1 25%;
-				margin: 0;
-				padding: 1.2rem 0;
-				height: 4.8rem;
-				line-height: 24px;
-
-				&.time {
-					width: 8rem;
-					flex-basis: auto;
-					flex-grow: 0;
-					color: fade(@color-fg, 54%);
-					font-size: 1.2rem;
-					text-transform: uppercase;
-				}
-				&.compass {
-					width: 32px;
-					flex-basis: auto;
-					flex-grow: 0;
-					// text-align: center;
-
-					span {
-						display: inline-block;
-						height: 24px;
-						width: 24px;
-						background-image: url(../img/compass.svg);
-						background-repeat: no-repeat;
-						background-size: 24px;
-					}
-				}
-				&.wind-full {
-					overflow: hidden;
-					display: none;
-				}
-				&.wind-mini {
-					overflow: hidden;
-					display: block;
-					font-size: 1.2rem;
-				}
-
-				@media @non-mobile {
-					&.wind-full {
-						display: block;
-					}
-					&.wind-mini {
-						display: none;
-					}
-				}
-
-				&.temp {
-					width: 42px;
-					font-size: 1.2rem;
-					text-align: right;
-					flex-basis: auto;
-					flex-grow: 0;
-					color: fade(@color-fg, 54%);
-					font-weight: bold;
-				}
-				&.icon {
-					width: 42px;
-					flex-basis: auto;
-					flex-grow: 0;
-					text-align: center;
-				}
-				&.percent {
-					width: 100%;
-					flex: 0 0 100%;
-					height: 3px;
-					line-height: 0;
-					margin: 0;
-					padding: 0;
-					background: @color-bg;
-					overflow: hidden;
-
-					span {
-						display: block;
-						background: @color-primary;
-						height: 3px;
-					}
-				}
+			&.time, &.temp {
+				color: fade(@color-fg, 54%);
+				font-size: 1.2rem;
+				font-weight: bold;
+				height: 4.4rem;
+				line-height: 2.4rem;
 			}
 
-		}
-
-
-	}
-}
-
-
-
-ul.daily {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	border-bottom: solid @color-bg 1px;
-
-	&.header {
-		li {
-			padding: 1rem 0;
-			line-height: 2.4rem;
-			text-transform: none !important;
-			font-size: 1.2rem;
-			font-weight: bold;
-			color: fade(@color-fg, 54%);
-		}
-	}
-
-	li {
-		flex: 1 1 20%;
-		margin: 0;
-		padding: 1.5rem 0;
-
-		&.time {
-			width: 9rem;
-			flex-basis: auto;
-			flex-grow: 0;
-			color: fade(@color-fg, 54%);
-			font-size: 1.2rem;
-			text-transform: uppercase;
-			line-height: 2.4rem;
-
-		}
-		&.wind {
-			// padding: 1rem 0 .5rem;
-
-			div.percent {
-				width: 100%;
-				height: 3px;
-				line-height: 0;
-				background: @color-bg;
-				overflow: hidden;
-				margin: .5rem 0 0 0;
+			&.time {
+				width: 8rem;
+				// background: #eee;
+			}
+			&.bear {
+				width: 3rem;
 				span {
 					display: block;
-					background: @color-primary;
-					height: 3px;
+					height: 24px;
+					width: 24px;
+					// background-color: #f0f0f0;
+					background-image: url(../img/compass.svg);
+					background-size: 24px;
+				}
+			}
+			&.wind {
+				flex-grow: 1;
+				flex-basis: 10%;
+				overflow: hidden;
+				line-height: 2rem;
+				padding: 1.2rem 0;
+
+				p em {
+					font-style: normal;
+					color: fade(@color-fg, 54%);
+				}
+				p.forecast-str {
+					color: fade(@color-fg, 54%);
+					display: none;
 				}
 
+				@media @small {
+					p strong, p em { display: block; }
+				}
+				@media @big {
+					p.forecast-str { display: block; }
+				}
 			}
-		}
-		&.min, &.max {
-			width: 42px;
-			flex-basis: auto;
-			flex-grow: 0;
-			text-align: center;
-			line-height: 2.4rem;
-			font-size: 1.2rem;
-			font-weight: bold;
-			color: fade(@color-fg, 54%);
-		}
+			&.temp {
+				width: 4rem;
+				text-align: right;
+				padding: 1rem 1rem 1rem 0;
+			}
+			&.icon {
+				flex-basis: auto;
+				flex-grow: 0;
+				width: 2.4rem;
+				padding: 1rem 0;
 
-		&.icon {
-			width: 42px;
-			flex-basis: auto;
-			flex-grow: 0;
-			text-align: center;
+				&:before {
+					content: '';
+					display: block;
+					width: 2.4rem;
+					height: 2.4rem;
+					background-image: url(../img/default.svg);
+					background-size: 24px;
+				}
+				&.clear-day:before { background-image: url(../img/clear-day.svg); }
+				&.clear-night:before { background-image: url(../img/clear-night.svg); }
+				&.cloudy:before { background-image: url(../img/cloudy.svg); }
+				&.fog:before { background-image: url(../img/fog.svg); }
+				&.partly-cloudy-day:before { background-image: url(../img/partly-cloudy-day.svg); }
+				&.partly-cloudy-night:before { background-image: url(../img/partly-cloudy-night.svg); }
+				&.rain:before { background-image: url(../img/rain.svg); }
+				&.sleet:before { background-image: url(../img/sleet.svg); }
+				&.snow:before { background-image: url(../img/snow.svg); }
+				&.wind:before { background-image: url(../img/wind.svg); }
+			}
+
+			&.percent {
+				width: 100%;
+				height: 2px;
+				background: @color-bg;
+				padding: 0;
+				overflow: hidden;
+
+				span {
+					display: block;
+					height: 2px;
+					// width: 0%;
+					background: @color-primary;
+				}
+			}
+
 		}
 	}
+
+	#proximos-dias .data-block {
+		li.time { width: 7rem; }
+	}
 }
+
+
 
 
 

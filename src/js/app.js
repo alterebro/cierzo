@@ -44,10 +44,10 @@ function renderData(data) {
 			return new Date(timestamp*1000).format('d.m.Y @H:i:s');
 		},
 		hour : function(timestamp) {
-			return new Date(timestamp*1000).format('dM. hA');
+			return new Date(timestamp*1000).format('Dd hA');
 		},
 		day : function(timestamp) {
-			return new Date(timestamp*1000).format('D d M');
+			return new Date(timestamp*1000).format('Dd M');
 		},
 		wind_direction : function(degrees) {
 			var v = Math.floor( (degrees/22.5) + 0.5 );

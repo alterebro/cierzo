@@ -66,40 +66,39 @@
 	<section id="proximas-horas">
 		<h3>Previsión para las próximas horas</h3>
 		{{@hourly}}
-			<ul class="hourly">
+			<ul class="data-block">
 				<li class="time">{{#_val.time|hour}}</li>
-				<li class="compass"><span style="transform: rotate({{=_val.angle}}deg);"></span></li>
-				<li class="wind-full"><strong>Vientos a {{=_val.speed}} Km/h</strong> del {{#_val.angle|wind_direction}} ( {{=_val.angle}}&deg; )</li>
-				<li class="wind-mini"><strong>{{=_val.speed}}Km/h</strong> {{#_val.angle|wind_direction}}</li>
-				<li class="temp">{{=_val.temp}}&deg; C</li>
-				<li class="icon"><img src="img/{{=_val.icon}}.svg" width="24" /></li>
-				<li class="percent"><span style="width: {{=_val.speed}}%"></span></li>
+				<li class="bear"><span style="transform: rotate({{=_val.angle}}deg)"></span></li>
+				<li class="wind">
+					<p>
+						<strong>{{=_val.speed}} Km/h</strong>
+						<em>{{=_val.angle}}&deg; {{#_val.angle|wind_direction}}</em>
+					</p>
+				</li>
+				<li class="temp">{{=_val.temp}}&deg;C</li>
+				<li class="icon {{=_val.icon}}"></li>
+				<li class="percent"><span style="width:{{=_val.speed}}%"></span></li>
 			</ul>
 		{{/@hourly}}
 	</section>
 
 	<section id="proximos-dias">
 		<h3>Previsión para las próximos dias</h3>
-		<ul class="daily header">
-			<li class="time">Día</li>
-			<li class="wind">Previsión</li>
-			<li class="min">Min.</li>
-			<li class="max">Max</li>
-			<li class="icon"></li>
-		</ul>
 		{{@daily}}
-			<ul class="daily">
+			<ul class="data-block">
 				<li class="time">{{#_val.time|day}}</li>
+				<li class="bear"><span style="transform: rotate({{=_val.angle}}deg)"></span></li>
 				<li class="wind">
 					<p>
-						<strong>Vientos a {{=_val.speed}} Km/h desde el {{#_val.angle|wind_direction}}</strong> ( {{=_val.angle}}&deg; )
-						<br />{{=_val.text}}
+						<strong>{{=_val.speed}} Km/h</strong>
+						<em>{{=_val.angle}}&deg; {{#_val.angle|wind_direction}}</em>
 					</p>
-					<div class="percent"><span style="width: {{=_val.speed}}%"></span></div>
+					<p class="forecast-str">{{=_val.text}}</p>
 				</li>
-				<li class="min">{{=_val.temp.0}}&deg;C</li>
-				<li class="max">{{=_val.temp.1}}&deg;C</li>
-				<li class="icon"><img src="img/{{=_val.icon}}.svg" width="24" /></li>
+				<li class="temp">{{=_val.temp.0}}&deg;C</li>
+				<li class="temp">{{=_val.temp.1}}&deg;C</li>
+				<li class="icon {{=_val.icon}}"></li>
+				<li class="percent"><span style="width:{{=_val.speed}}%"></span></li>
 			</ul>
 		{{/@daily}}
 	</section>
