@@ -1,3 +1,4 @@
+// Vars
 @color-fg : #000;
 @color-fg-inv : #fff;
 @color-bg : #f5f5f5;
@@ -5,11 +6,9 @@
 
 @breakpoint-small : 400;
 @breakpoint-medium : 480;
-
 @small : ~"all and (max-width: @{breakpoint-small}px)";
 @medium : ~"all and (min-width: @{breakpoint-small}px) and (max-width: @{breakpoint-medium}px)";
 @big : ~"all and (min-width: @{breakpoint-medium}px)";
-
 
 html {
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
@@ -57,7 +56,7 @@ a:active, a:hover {
 
 
 // -----
-h1, h3, p, nav ul, nav li {
+h1, h2, h3, p, nav ul, nav li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -78,18 +77,24 @@ header[role="banner"] {
 
 	background: @color-primary;
 	color: @color-fg-inv;
-	box-shadow: 0 3px 2px fade(#000, 15%);
+	box-shadow:
+		inset 0 4px 0 darken(@color-primary, 5%),
+		0 3px 2px fade(#000, 15%)
+	;
 
 	h1 {
 		.container();
 		font-size: 2rem;
 		font-weight: normal;
 		padding: 2rem 2rem 0;
+		text-shadow: 0 -1px 0 fade(#000, 20%);
 	}
-	p {
+	h2 {
 		.container();
+		font-size: 1.4rem;
+		font-weight: normal;
 		padding: 0 2rem;
-		margin: 0 auto .5rem;
+		margin: 0 auto 1rem;
 		line-height: 2rem;
 		color: fade(@color-fg-inv, 70%);
 	}
@@ -105,6 +110,7 @@ header[role="banner"] {
 			justify-content: space-between;
 
 			li {
+				border-top: solid fade(#fff, 25%) 1px;
 				flex: 1 1 auto;
 
 				a {
@@ -154,7 +160,7 @@ main {
 		padding: 0;
 
 		header {
-			padding: 2rem 2rem 3rem;
+			padding: 2rem;
 			min-height: 24rem;
 			background-color: lighten(@color-fg, 20%);
 			background-image: url(../img/elpilar-zaragoza.jpg);
@@ -165,17 +171,18 @@ main {
 			p {
 				color: fade(#fff, 70%);
 				margin: 0 0 2rem 0;
+				background: fade(#000, 25%);
+				display: inline-block;
+				width: auto;
 			}
 			ul {
 
 				position: relative;
 				list-style: none;
-				margin: 0 auto 1rem auto;
-				padding: 0;
+				margin: 1rem auto 1rem auto;
 				padding: 2rem;
 				height: 14rem;
 				width: 14rem;
-
 				text-align: center;
 				z-index: 1;
 
@@ -189,11 +196,9 @@ main {
 					margin-left: -1.5rem;
 					width: 3rem;
 					height: 20rem;
-					// transform: rotate(0deg);
 					background-image: url(../img/arrow.svg);
 					background-repeat: no-repeat;
 					background-position: bottom center;
-
 				}
 				&:after {
 					content: '';
@@ -225,6 +230,7 @@ main {
 						font-weight: normal;
 						line-height: 4.5rem;
 						display: block;
+						letter-spacing: -.25rem;
 					}
 					small {
 						display: block;
@@ -236,13 +242,13 @@ main {
 					font-size: 1.2rem;
 					background: fade(@color-primary, 100%);
 					color: fade(@color-fg-inv, 100%);
-					height: 2.5rem;
-					line-height: 2.5rem;
+					height: 2.2rem;
+					line-height: 2.2rem;
 					margin: .25rem 0;
 					display: inline-block;
 					width: auto;
-					padding: 0 1rem;
-					border-radius: 3px;
+					padding: 0 .75rem;
+					border-radius: 4px;
 				}
 			}
 		}
