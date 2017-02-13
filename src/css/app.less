@@ -121,6 +121,9 @@ header[role="banner"] {
 					font-size: 1.2rem;
 					color: fade(@color-fg-inv, 50%);
 
+					-webkit-transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+					transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+
 					&:hover {
 						color: fade(@color-fg-inv, 70%);
 					}
@@ -136,6 +139,16 @@ header[role="banner"] {
 	hr { display: none; }
 }
 
+#app {
+	-webkit-transition: opacity .5s ease, transform .5s ease-in;
+	transition: opacity .5s ease, transform .5s ease-in;
+	opacity: 1;
+	transform: none;
+	&.hide {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+}
 
 main {
 	.container();
@@ -419,12 +432,6 @@ main {
 	}
 }
 
-
-
-
-
-
-
 footer {
 	.container();
 	padding: 0 2rem;
@@ -440,5 +447,46 @@ footer {
 			color: @color-fg;
 			text-decoration: underline;
 		}
+	}
+}
+
+#loader {
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+
+	height: 16rem;
+	margin: 2rem;
+	padding: 2rem 0;
+	overflow: hidden;
+	opacity: 1;
+
+	&.hide {
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		height: 0;
+	}
+
+
+	&:before {
+		content: '';
+		display: block;
+		height: 100px;
+		width: 100px;
+		margin: 0 auto;
+		background-image: url('../img/icons/safari-pinned-tab.svg');
+		background-size: 100px;
+		background-repeat: no-repeat;
+		filter: invert(60%);
+	}
+	&:after {
+		content: 'Cargando Datos';
+		font-size: 1.2rem;
+		text-align: center;
+		color: fade(@color-fg, 54%);
+		display: block;
+		margin: 0 auto;
+		height: 2rem;
+		line-height: 2rem;
 	}
 }

@@ -122,6 +122,8 @@ header[role="banner"] nav ul li a {
   text-transform: uppercase;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 header[role="banner"] nav ul li a:hover {
   color: rgba(255, 255, 255, 0.7);
@@ -132,6 +134,16 @@ header[role="banner"] nav ul li a.active {
 }
 header[role="banner"] hr {
   display: none;
+}
+#app {
+  -webkit-transition: opacity 0.5s ease, transform 0.5s ease-in;
+  transition: opacity 0.5s ease, transform 0.5s ease-in;
+  opacity: 1;
+  transform: none;
+}
+#app.hide {
+  opacity: 0;
+  transform: translateY(2rem);
 }
 main {
   max-width: 64rem;
@@ -415,4 +427,40 @@ footer a {
 footer a:hover {
   color: #000000;
   text-decoration: underline;
+}
+#loader {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  height: 16rem;
+  margin: 2rem;
+  padding: 2rem 0;
+  overflow: hidden;
+  opacity: 1;
+}
+#loader.hide {
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  height: 0;
+}
+#loader:before {
+  content: '';
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  background-image: url('../img/icons/safari-pinned-tab.svg');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  filter: invert(60%);
+}
+#loader:after {
+  content: 'Cargando Datos';
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  display: block;
+  margin: 0 auto;
+  height: 2rem;
+  line-height: 2rem;
 }

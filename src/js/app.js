@@ -68,7 +68,7 @@ function renderData(data) {
 	    content.removeChild(content.firstChild);
 	}
 
-	var tpl = document.querySelector('#app');
+	var tpl = document.querySelector('#template');
 	var template = new t(tpl.innerHTML);
 		template.register("timestamp", filter.timestamp );
 		template.register("hour", filter.hour );
@@ -77,6 +77,7 @@ function renderData(data) {
 		template.register("wind_string", filter.wind_string );
 
 	var app = document.createElement('div');
+		app.setAttribute('id', 'app');
 		app.innerHTML = template.render(data);
 	document.querySelector('main').appendChild(app);
 
@@ -141,10 +142,20 @@ var router = {
 
 	},
 	showBlock : function(block) {
-		for (var i = 0; i < this.blocks.length; i++) {
-			document.getElementById(this.blocks[i]).style.display = 'none';
-		}
-		document.getElementById(block).style.display = 'block';
+
+		// Block transition
+		document.getElementById('app').className = 'hide';
+		var self = this;
+		setTimeout( function() {
+
+			self.blocks.forEach(function(el) {
+				document.getElementById(el).style.display = 'none';
+			});
+			document.getElementById(block).style.display = 'block';
+			document.getElementById('app').className = '';
+
+		}, 300 );
+
 
 		document.querySelectorAll('header nav a').forEach(function(el) {
 			el.classList.remove('active');
@@ -161,6 +172,9 @@ var router = {
 			blocks.forEach(function(el, i) {
 				self.blocks.push( el.getAttribute('id') );
 			});
+
+		// Hide Loader
+		document.getElementById('loader').className = 'hide';
 
 		// TODO : get block from URL hash
 		if (!this.current_block) { this.current_block = this.blocks[0]; }
