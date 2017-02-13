@@ -19,6 +19,11 @@ var gulp = require('gulp'),
 			.pipe(gulp.dest('www/img'))
 	});
 
+	gulp.task('files', function(){
+		return gulp.src('src/config.xml')
+			.pipe(gulp.dest('www/'))
+	});
+
 	gulp.task('build', function() {
 		return gulp.src("src/index.html")
 			.pipe(useref())
@@ -33,4 +38,4 @@ var gulp = require('gulp'),
 			.pipe(gulp.dest('www/'));
 	})
 
-	gulp.task( 'default', gulpsequence('clean', ['images', 'build'], 'compress') );
+	gulp.task( 'default', gulpsequence('clean', ['images', 'files', 'build'], 'compress') );
