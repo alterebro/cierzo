@@ -13,5 +13,4 @@ $ gulp
 
 # deploy
 $ sh deploy.sh
-
 ```
