@@ -42,7 +42,8 @@ function renderData(data) {
 
 	var filter = {
 		timestamp : function(timestamp) {
-			return new Date(timestamp*1000).format('d.m.Y @H:i:s');
+			// return new Date(timestamp*1000).format('d.m.Y @H:i:s');
+			return new Date(timestamp*1000).format('d.m.Y @H:i');
 		},
 		hour : function(timestamp) {
 			return new Date(timestamp*1000).format('Dd hA');
@@ -82,7 +83,7 @@ function renderData(data) {
 	document.querySelector('main').appendChild(app);
 
 	router.init();
-	// timer.init(2);
+	timer.init(2);
 }
 
 var timer = {
@@ -94,9 +95,9 @@ var timer = {
 		var current_minutes = this.mins-1;
 		this.seconds--;
 
-		// output
-		console.log( current_minutes.toString() + ":" + (this.seconds < 10 ? "0" : "") + String(this.seconds) , this.seconds, current_minutes );
-		console.log();
+		// Output
+		var output = (current_minutes < 10 ? "0" : "") + current_minutes.toString() + ":" + (this.seconds < 10 ? "0" : "") + String(this.seconds);
+		document.getElementById('timer-output').innerHTML = 'Próxima actualización de datos: ' + output;
 
 		if ( this.seconds > 0 ) {
 			var self = this;
