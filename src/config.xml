@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "es.976.cierzo"
+        id        = "com.alterebro.cierzo"
         version   = "1.0.0">
 
     <name>Cierzo Maño</name>
@@ -20,6 +20,7 @@
     <!--
         Define a specific version of PhoneGap to build into your app.
         <preference name="phonegap-version"       value="3.5.0" />
+		<preference name="phonegap-version" value="cli-6.5.0" />
     -->
 	<preference name="android-minSdkVersion" value="19" />
 
