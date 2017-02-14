@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.alterebro.cierzo"
-        version   = "1.0.0">
+        version   = "1.0.1">
 
     <name>Cierzo Maño</name>
     <description>Aplicación para conocer las condiciones actuales y previsiónes de viento en Zaragoza.</description>
@@ -29,10 +29,11 @@
 	<preference name="SplashShowOnlyFirstTime" value="false" />
 	<preference name="AutoHideSplashScreen" value="true" />
 	<preference name="SplashScreenDelay" value="3000" />
+	<preference name="ShowSplashScreenSpinner" value="false"/>
 
 
-	<icon src="img/icons/android-chrome-384x384.png" />
-	<splash src="img/cierzo-zaragoza.jpg" />
+	<icon src="img/icons/android-chrome-512x512.png" />
+	<splash src="img/share/cierzo-zaragoza.jpg" />
 
     <access origin="*"/>
 

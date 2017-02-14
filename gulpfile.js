@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 	});
 
 	gulp.task('files', function(){
-		return gulp.src('src/config.xml')
+		return gulp.src(['src/config.xml', 'src/manifest.json'])
 			.pipe(gulp.dest('www/'))
 	});
 

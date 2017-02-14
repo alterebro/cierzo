@@ -33,16 +33,16 @@
 - Clone the repository or **[download it](https://github.com/alterebro/cierzo/archive/master.zip)**.
 
 ```
-$ git clone https://github.com/alterebro/cierzo.git` 
+$ git clone https://github.com/alterebro/cierzo.git`
 ```
 
-- Install dependencies: 
+- Install dependencies:
 
 ```
 $ npm install
 ```
 
-- Sign up for a Dark Sky API Key: 
+- Sign up for a Dark Sky API Key:
 [https://darksky.net/dev/](https://darksky.net/dev/)
 
 - Edit the file `cierzo/api/config.sample.php` file and rename it to `cierzo/api/config.php`, use the secret API Key given to you by DarkSky.
@@ -51,7 +51,7 @@ $ npm install
 <?php
 	return array(
 		'darksky_api_key' 	=> 'alphanumeric API Key from DarkSky',
-		'darksky_base_url' 	=> 'https://api.darksky.net/forecast/', 
+		'darksky_base_url' 	=> 'https://api.darksky.net/forecast/',
 		'latitude' 			=> 41.65, // Zaragoza, Spain (Lat)
 		'longitude' 		=> -0.883, // Zaragoza, Spain (Lng)
 		'lang' 				=> 'es',
@@ -60,7 +60,7 @@ $ npm install
 ?>
 ```
 
-- Now you acn build the project with gulp
+- Now you can build the project with gulp
 
 ```sh
 $ gulp
@@ -72,7 +72,7 @@ This will create the compiled project on the `www/` folder.
 
 ---
 
-<a href="http://cierzo.976.es"><img src="http://cierzo.976.es/www/img/cierzo-zaragoza.jpg" width="500" /></a>
+<a href="http://cierzo.976.es"><img src="http://cierzo.976.es/www/img/share/cierzo-zaragoza.jpg" width="500" /></a>
 
 ---
 
@@ -82,5 +82,6 @@ This will create the compiled project on the `www/` folder.
 - **t.js** Micro templating framework by Jason Mooberry (@jasonmoo) and modified by @icyflash: [github.com/icyflash/t.js](https://github.com/icyflash/t.js)
 - **Date.format** JS library with same method as PHP's date() function, by Jacob Wright, @jacwright [github.com/jacwright/date.format](https://github.com/jacwright/date.format)
 - **Ajax module in Vanilla JS** by @fdaciuk [github.com/fdaciuk/ajax](https://github.com/fdaciuk/ajax)
+- **Meteocons** weather icons set by Alessio Atzeni [www.alessioatzeni.com/meteocons/](http://www.alessioatzeni.com/meteocons/)
 
 ---

@@ -392,10 +392,11 @@ main {
 				&:before {
 					content: '';
 					display: block;
-					width: 2.4rem;
-					height: 2.4rem;
+					width: 24px;
+					height: 24px;
 					background-image: url(../img/default.svg);
-					background-size: 24px;
+					background-size: 24px 24px;
+					background-repeat: no-repeat;
 				}
 				&.clear-day:before { background-image: url(../img/clear-day.svg); }
 				&.clear-night:before { background-image: url(../img/clear-night.svg); }
@@ -434,7 +435,7 @@ main {
 
 footer {
 	.container();
-	padding: 0 2rem 2rem 2rem;
+	padding: 0 2rem 1rem 2rem;
 	color: fade(@color-fg, 54%);
 	font-size: 1.2rem;
 
@@ -478,7 +479,7 @@ footer {
 		height: 100px;
 		width: 100px;
 		margin: 0 auto;
-		background-image: url('../img/icons/safari-pinned-tab.svg');
+		background-image: url('../img/lion-zgz.svg');
 		background-size: 100px;
 		background-repeat: no-repeat;
 		filter: invert(60%);
