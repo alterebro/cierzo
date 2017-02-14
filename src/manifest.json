@@ -19,5 +19,14 @@
 
 	"theme_color": "#da2a1d",
 	"background_color": "#da2a1d",
-	"display": "standalone"
+	"display": "standalone",
+
+	"prefer_related_applications": true,
+	"related_applications": [
+	  {
+	    "platform": "play",
+		"url": "https://play.google.com/store/apps/details?id=com.alterebro.cierzo",
+	    "id": "com.alterebro.cierzo"
+	  }
+	],
 }
