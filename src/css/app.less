@@ -435,7 +435,7 @@ main {
 
 footer {
 	.container();
-	padding: 0 2rem 1rem 2rem;
+	padding: 0 2rem 2rem;
 	color: fade(@color-fg, 54%);
 	font-size: 1.2rem;
 
@@ -453,6 +453,29 @@ footer {
 			text-decoration: underline;
 		}
 	}
+
+	#google-play {
+		display: none;
+		&.visible { display: block; }
+		a {
+			display: inline-block;
+			color: @color-bg;
+			background-color: #000;
+			background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120.9%20129.2%22%3E%0A%09%3Cpath%20d%3D%22M89.2%2084.5l28-15.3c3.2-1.8%206.5-6.2%200-9.7l-28-15.3-20%2020.2%2020%2020z%22%20fill%3D%22%23ffe300%22/%3E%0A%09%3Cpath%20d%3D%22M69%2064.4L5%20129c1.3.3%203%200%205-1.2l79.2-43.3-20-20z%22%20fill%3D%22%23ff4e54%22/%3E%0A%09%3Cpath%20d%3D%22M69%2064.4l20.2-20.2S14.5%203.5%2010.2%201c-2-1-3.8-1.2-5.5-1L69%2064.5z%22%20fill%3D%22%2300f085%22/%3E%0A%09%3Cpath%20d%3D%22M69%2064.4L5%200C2.2.8%200%203%200%207.8v113.7c0%204.4%201.7%207.4%205%207.7l64-64.6z%22%20fill%3D%22%2300e0ff%22/%3E%0A%3C/svg%3E%0A);
+			background-repeat: no-repeat;
+			background-size: auto 20px;
+			background-position: 10px 5px;
+			height: 3rem;
+			line-height: 3rem;
+			border-radius: .5rem;
+			padding: 0 1rem 0 3.5rem;
+
+			&:hover, &:focus {
+				color: #fff;
+			}
+		}
+	}
+
 }
 
 #loader {

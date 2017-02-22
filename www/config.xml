@@ -4,10 +4,10 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.alterebro.cierzo"
-        version   = "1.0.1">
+        version   = "1.0.2">
 
     <name>Cierzo Maño</name>
-    <description>Aplicación para conocer las condiciones actuales y previsiónes de viento en Zaragoza.</description>
+    <description>Aplicación para conocer las condiciones actuales y previsiones de viento en Zaragoza.</description>
     <author href="http://moro.es">Jorge Moreno</author>
 
     <preference name="permissions"                value="none"/>

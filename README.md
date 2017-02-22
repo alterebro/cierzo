@@ -18,7 +18,7 @@
 		<br><strong><a href="https://play.google.com/store/apps/details?id=com.alterebro.cierzo">play.google.com/store/apps/details?id=com.alterebro.cierzo</a></strong>
 	</td>
 	<td align="center">
-	<a href="http://cierzo.976.es/"><img src="http://cierzo.976.es/www/img/icons/android-chrome-384x384.png" width="80" /></a>
+	<a href="http://cierzo.976.es/"><img src="http://cierzo.976.es/www/img/icons/android-chrome-512x512.png" width="80" /></a>
 	<br><strong><a href="http://cierzo.976.es/">http://cierzo.976.es/</a></strong>
 	</td>
 </tr>
