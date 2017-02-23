@@ -59,8 +59,17 @@ function renderData(data) {
 		wind_string : function(degrees) {
 			var v = Math.floor( (degrees/22.5) + 0.5 );
 				v = winds[(v%16)];
-			var str = 'Viento ' + v.name +  ' del ' + v.from;
+			var str = v.name +  ' del ' + v.from;
 			return str;
+		},
+		beaufort_str : function(speed) {
+			var b = beaufort(speed);
+			return b.desc;
+		},
+		beaufort_per : function(speed) {
+			var b = beaufort(speed);
+			var g = Math.round(b.grade * 10);
+			return (g>100) ? 100 : g;
 		}
 	}
 
@@ -77,6 +86,8 @@ function renderData(data) {
 		template.register("day", filter.day );
 		template.register("wind_direction", filter.wind_direction );
 		template.register("wind_string", filter.wind_string );
+		template.register("beaufort_str", filter.beaufort_str );
+		template.register("beaufort_per", filter.beaufort_per );
 
 	var app = document.createElement('div');
 		app.setAttribute('id', 'app');

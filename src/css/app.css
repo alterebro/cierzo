@@ -164,7 +164,7 @@ main section#cierzo-ahora {
   padding: 0;
 }
 main section#cierzo-ahora header {
-  padding: 2rem;
+  padding: 0 0 3rem;
   min-height: 24rem;
   background-color: #333333;
   background-image: url(../img/elpilar-zaragoza.jpg);
@@ -173,13 +173,14 @@ main section#cierzo-ahora header {
 }
 main section#cierzo-ahora header h3 {
   color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2rem 2rem 0;
 }
 main section#cierzo-ahora header p {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 2rem 0;
-  background: rgba(0, 0, 0, 0.25);
-  display: inline-block;
-  width: auto;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 3rem 0;
+  padding: 0 2rem 2rem;
+  background: rgba(0, 0, 0, 0.35);
 }
 main section#cierzo-ahora header ul {
   position: relative;
@@ -204,6 +205,7 @@ main section#cierzo-ahora header ul:before {
   background-image: url(../img/arrow.svg);
   background-repeat: no-repeat;
   background-position: bottom center;
+  transform: rotate(180deg);
 }
 main section#cierzo-ahora header ul:after {
   content: '';
@@ -332,7 +334,8 @@ main .data-block li.wind p em {
   font-style: normal;
   color: rgba(0, 0, 0, 0.54);
 }
-main .data-block li.wind p.forecast-str {
+main .data-block li.wind p.forecast-str,
+main .data-block li.wind span.forecast-str {
   color: rgba(0, 0, 0, 0.54);
   display: none;
 }
@@ -345,6 +348,9 @@ main .data-block li.wind p.forecast-str {
 @media all and (min-width: 480px) {
   main .data-block li.wind p.forecast-str {
     display: block;
+  }
+  main .data-block li.wind span.forecast-str {
+    display: inline-block;
   }
 }
 main .data-block li.temp {

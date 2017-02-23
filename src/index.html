@@ -80,7 +80,7 @@
 		<header>
 			<h3>El Viento ahora en Zaragoza:</h3>
 			<p>
-				{{#current.angle|wind_string}} a <strong>{{=current.speed}} Km/h</strong>.
+				<strong>{{#current.speed|beaufort_str}}</strong>, {{#current.angle|wind_string}} a <strong>{{=current.speed}} Km/h</strong>.
 				<br />{{=current.temp}}&deg;C. {{=current.text}}
 			</p>
 			<ul>
@@ -114,12 +114,13 @@
 				<li class="wind">
 					<p>
 						<strong>{{=_val.speed}} Km/h</strong>
+						<span class="forecast-str">{{#_val.speed|beaufort_str}}.</span>
 						<em>{{=_val.angle}}&deg; {{#_val.angle|wind_direction}}</em>
 					</p>
 				</li>
 				<li class="temp">{{=_val.temp}}&deg;C</li>
 				<li class="icon {{=_val.icon}}"></li>
-				<li class="percent"><span style="width:{{=_val.speed}}%"></span></li>
+				<li class="percent"><span style="width:{{#_val.speed|beaufort_per}}%"></span></li>
 			</ul>
 		{{/@hourly}}
 	</section>
@@ -133,6 +134,7 @@
 				<li class="wind">
 					<p>
 						<strong>{{=_val.speed}} Km/h</strong>
+						<span class="forecast-str">{{#_val.speed|beaufort_str}}.</span>
 						<em>{{=_val.angle}}&deg; {{#_val.angle|wind_direction}}</em>
 					</p>
 					<p class="forecast-str">{{=_val.text}}</p>
@@ -140,7 +142,7 @@
 				<li class="temp">{{=_val.temp.0}}&deg;C</li>
 				<li class="temp">{{=_val.temp.1}}&deg;C</li>
 				<li class="icon {{=_val.icon}}"></li>
-				<li class="percent"><span style="width:{{=_val.speed}}%"></span></li>
+				<li class="percent"><span style="width:{{#_val.speed|beaufort_per}}%"></span></li>
 			</ul>
 		{{/@daily}}
 	</section>
@@ -157,6 +159,7 @@
 </footer>
 
 <!-- build:js js/app.min.js -->
+<script type="text/javascript" src="js/beaufort-scale.js"></script>
 <script type="text/javascript" src="js/date.format.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/t.js"></script>

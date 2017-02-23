@@ -173,20 +173,23 @@ main {
 		padding: 0;
 
 		header {
-			padding: 2rem;
+			padding: 0 0 3rem;
 			min-height: 24rem;
 			background-color: lighten(@color-fg, 20%);
 			background-image: url(../img/elpilar-zaragoza.jpg);
 			background-size: cover;
 			background-position: top center;
 
-			h3 { color: #fff; }
+			h3 {
+				color: #fff;
+				background: fade(#000, 35%);
+				padding: 2rem 2rem 0;
+			}
 			p {
-				color: fade(#fff, 70%);
-				margin: 0 0 2rem 0;
-				background: fade(#000, 25%);
-				display: inline-block;
-				width: auto;
+				color: fade(#fff, 85%);
+				margin: 0 0 3rem 0;
+				padding: 0 2rem 2rem;
+				background: fade(#000, 35%);
 			}
 			ul {
 
@@ -212,6 +215,8 @@ main {
 					background-image: url(../img/arrow.svg);
 					background-repeat: no-repeat;
 					background-position: bottom center;
+
+					transform: rotate(180deg);
 				}
 				&:after {
 					content: '';
@@ -364,7 +369,7 @@ main {
 					font-style: normal;
 					color: fade(@color-fg, 54%);
 				}
-				p.forecast-str {
+				p.forecast-str, span.forecast-str {
 					color: fade(@color-fg, 54%);
 					display: none;
 				}
@@ -374,6 +379,7 @@ main {
 				}
 				@media @big {
 					p.forecast-str { display: block; }
+					span.forecast-str { display: inline-block; }
 				}
 			}
 			&.temp {
