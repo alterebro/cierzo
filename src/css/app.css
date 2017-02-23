@@ -177,9 +177,9 @@ main section#cierzo-ahora header h3 {
   padding: 2rem 2rem 0;
 }
 main section#cierzo-ahora header p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
   margin: 0 0 3rem 0;
-  padding: 0 2rem 2rem;
+  padding: 0 2rem 1rem;
   background: rgba(0, 0, 0, 0.35);
 }
 main section#cierzo-ahora header ul {
@@ -439,6 +439,7 @@ footer a:hover {
   text-decoration: underline;
 }
 footer #google-play {
+  padding: 1.5rem 0 0;
   display: none;
 }
 footer #google-play.visible {

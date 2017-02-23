@@ -3,7 +3,7 @@
 **Cierzo Maño** is a JavaScript fast dev test hybrid application built with PhoneGap, using the [darksky.net](https://darksky.net/dev/) weather API. The UI targets on display the wind current conditions and forecast for a specific location, in this case: — *The windy city of Zaragoza, Spain*.
 
 
-- **Online WebApp : [http://cierzo.976.es/](http://cierzo.976.es/)**
+- **Online WebApp : [https://cierzo.976.es/](https://cierzo.976.es/)**
 - **Android Mobile App : [https://play.google.com/store/apps/details?id=com.alterebro.cierzo](https://play.google.com/store/apps/details?id=com.alterebro.cierzo)**
 
 
@@ -18,8 +18,8 @@
 		<br><strong><a href="https://play.google.com/store/apps/details?id=com.alterebro.cierzo">play.google.com/store/apps/details?id=com.alterebro.cierzo</a></strong>
 	</td>
 	<td align="center">
-	<a href="http://cierzo.976.es/"><img src="http://cierzo.976.es/www/img/icons/android-chrome-512x512.png" width="80" /></a>
-	<br><strong><a href="http://cierzo.976.es/">http://cierzo.976.es/</a></strong>
+	<a href="https://cierzo.976.es/"><img src="https://cierzo.976.es/www/img/icons/android-chrome-512x512.png" width="80" /></a>
+	<br><strong><a href="https://cierzo.976.es/">https://cierzo.976.es/</a></strong>
 	</td>
 </tr>
 </table>
@@ -72,7 +72,7 @@ This will create the compiled project on the `www/` folder.
 
 ---
 
-<a href="http://cierzo.976.es"><img src="http://cierzo.976.es/www/img/share/cierzo-zaragoza.jpg" width="500" /></a>
+<a href="https://cierzo.976.es"><img src="https://cierzo.976.es/www/img/share/cierzo-zaragoza.jpg" width="500" /></a>
 
 ---
 

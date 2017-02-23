@@ -2,7 +2,7 @@
 	"name": "Cierzo Maño App",
 	"short_name": "Cierzo Maño",
 	"lang": "es-ES",
-	"start_url": "/index.html",
+	"start_url": "/index.html?launcher=homescreen",
 
     "icons": [
         {
