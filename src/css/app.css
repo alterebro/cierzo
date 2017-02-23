@@ -205,7 +205,6 @@ main section#cierzo-ahora header ul:before {
   background-image: url(../img/arrow.svg);
   background-repeat: no-repeat;
   background-position: bottom center;
-  transform: rotate(180deg);
 }
 main section#cierzo-ahora header ul:after {
   content: '';
