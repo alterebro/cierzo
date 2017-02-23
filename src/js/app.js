@@ -2,9 +2,10 @@ var PhoneGap = (document.URL.match(/^https?:/) === null);
 
 function getData() {
 
+	var url = (PhoneGap) ? 'https://cierzo.976.es/api/' : '//cierzo.976.es/api/';
 	var request = ajax()
 		// .get('../api/')
-		.get('//cierzo.976.es/api/')
+		.get(url)
 		.then(function(res, xhr) {
 			// console.log(res);
 			renderData(res);
