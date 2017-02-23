@@ -196,11 +196,11 @@ main section#cierzo-ahora header ul:before {
   z-index: -1;
   position: absolute;
   display: block;
-  top: -3rem;
+  top: -3.5rem;
   left: 50%;
-  margin-left: -1.5rem;
-  width: 3rem;
-  height: 20rem;
+  margin-left: -2rem;
+  width: 4rem;
+  height: 21rem;
   background-image: url(../img/arrow.svg);
   background-repeat: no-repeat;
   background-position: bottom center;
