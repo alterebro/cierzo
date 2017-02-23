@@ -4,7 +4,7 @@ function getData() {
 
 	var request = ajax()
 		// .get('../api/')
-		.get('http://cierzo.976.es/api/')
+		.get('//cierzo.976.es/api/')
 		.then(function(res, xhr) {
 			// console.log(res);
 			renderData(res);
