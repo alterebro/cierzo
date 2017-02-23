@@ -498,3 +498,9 @@ footer #google-play a:focus {
   height: 2rem;
   line-height: 2rem;
 }
+#loader.error:before {
+  filter: invert(80%);
+}
+#loader.error:after {
+  content: 'Error de conexión';
+}

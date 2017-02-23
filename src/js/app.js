@@ -4,14 +4,14 @@ function getData() {
 
 	var url = (PhoneGap) ? 'https://cierzo.976.es/api/' : '//cierzo.976.es/api/';
 	var request = ajax()
-		// .get('../api/')
 		.get(url)
-		.then(function(res, xhr) {
-			// console.log(res);
+		.then(function(res) {
 			renderData(res);
 		})
-		.catch(function() {})
-		.always(function() {});
+		.catch(function() {
+			document.getElementById('loader').className = 'error';
+		})
+		// .always(function() {});
 }
 
 function renderData(data) {

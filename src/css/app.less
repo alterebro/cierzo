@@ -499,7 +499,6 @@ footer {
 		height: 0;
 	}
 
-
 	&:before {
 		content: '';
 		display: block;
@@ -520,5 +519,10 @@ footer {
 		margin: 0 auto;
 		height: 2rem;
 		line-height: 2rem;
+	}
+
+	&.error {
+		&:before { filter: invert(80%); }
+		&:after { content: 'Error de conexión'; }
 	}
 }
