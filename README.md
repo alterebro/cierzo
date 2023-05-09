@@ -1,6 +1,6 @@
 # Cierzo.app
 
-**Cierzo Maño** is a JavaScript fast dev test hybrid application built with PhoneGap, using the [darksky.net](https://darksky.net/dev/) weather API. The UI targets on display the wind current conditions and forecast for a specific location, in this case: — *The windy city of Zaragoza, Spain*.
+**Cierzo Maño** is a JavaScript fast dev test hybrid application built with PhoneGap, using the ~~[darksky.net](https://darksky.net/dev/)~~ [Pirate Weather](https://pirateweather.net/en/latest/) weather API. The UI targets on display the wind current conditions and forecast for a specific location, in this case: — *The windy city of Zaragoza, Spain*.
 
 
 - **Online WebApp : [https://cierzo.976.es/](https://cierzo.976.es/)**
@@ -42,16 +42,19 @@ $ git clone https://github.com/alterebro/cierzo.git`
 $ npm install
 ```
 
-- Sign up for a Dark Sky API Key:
-[https://darksky.net/dev/](https://darksky.net/dev/)
+- ~~Sign up for a Dark Sky API Key:
+[https://darksky.net/dev/](https://darksky.net/dev/)~~
+- Sign up for a Pirate Weather API Key:
+[https://pirateweather.net/en/latest/](https://pirateweather.net/en/latest/)
+
 
 - Edit the file `cierzo/api/config.sample.php` file and rename it to `cierzo/api/config.php`, use the secret API Key given to you by DarkSky.
 
 ```php
 <?php
 	return array(
-		'darksky_api_key' 	=> 'alphanumeric API Key from DarkSky',
-		'darksky_base_url' 	=> 'https://api.darksky.net/forecast/',
+		'darksky_api_key' 	=> 'alphanumeric API Key from PirateWeather',
+		'darksky_base_url' 	=> 'https://api.pirateweather.net/forecast/',
 		'latitude' 			=> 41.65, // Zaragoza, Spain (Lat)
 		'longitude' 		=> -0.883, // Zaragoza, Spain (Lng)
 		'lang' 				=> 'es',

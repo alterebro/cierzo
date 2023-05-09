@@ -33,9 +33,10 @@ var gulp = require('gulp'),
 	});
 
 	gulp.task('compress', function() {
-		return 	gulp.src('www/index.html')
+		return gulp.src('www/index.html')
 			.pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
 			.pipe(gulp.dest('www/'));
 	})
 
-	gulp.task( 'default', gulpsequence('clean', ['images', 'files', 'build'], 'compress') );
+	// gulp.task( 'default', gulpsequence('clean', ['images', 'files', 'build'], 'compress') );
+	gulp.task( 'default', gulp.series('clean', gulp.parallel('images', 'files', 'build'), 'compress') );
